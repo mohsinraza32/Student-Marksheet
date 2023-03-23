@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Student Marksheet</h1>
+        <form onsubmit="calculate();return false">
+            <label for="englishMarks">English:</label>
+            <input type="number" id="englishMarks" placeholder="Enter your marks"><br>
+            <label for="mathMarks">Math:</label>
+            <input type="number" id="mathMarks" placeholder="Enter your marks"><br>
+            <label for="physicsMarks">Physics:</label>
+            <input type="number" id="physicsMarks" placeholder="Enter your marks"><br>
+            <label for="chemistryMarks">Chemistry:</label>
+            <input type="number" id="chemistryMarks" placeholder="Enter your marks"><br>
+            <label for="computerMarks">Computer:</label>
+            <input type="number" id="computerMarks" placeholder="Enter your marks"><br>
+            <label for="urduMarks">Urdu:</label>
+            <input type="number" id="urduMarks" placeholder="Enter your marks"><br>
+            <button class="btn" type="submit">Calculate</button>
+        </form>
+        <h1 id="result1"></h1>
+    </div>
+    <script>
+        function calculate(){
+            let englishMarks = document.querySelector("#englishMarks").value;
+            let mathMarks = document.querySelector("#englishMarks").value;
+            let physicsMarks = document.querySelector("#physicsMarks").value;
+            let chemistryMarks = document.querySelector("#chemistryMarks").value;
+            let computerMarks = document.querySelector("#computerMarks").value;
+            let urduMarks = document.querySelector("#urduMarks").value;
+            let grades = "";
+            
+            let totalMarks = parseFloat(englishMarks) + parseFloat(mathMarks) + parseFloat(physicsMarks) + parseFloat(chemistryMarks) + parseFloat(computerMarks) + parseFloat(urduMarks);
+           
+            let percentage = (totalMarks/600) * 100;
+         
+            if( percentage <= 100 && percentage >= 80 ){
+                grades = "A";
+            }else if( percentage <= 79 && percentage >= 60 ){
+                grades = "B";
+            }else if( percentage <= 59 && percentage >= 40 ){
+                grades = "C";
+            }else{
+                grades = "Fail";
+            }
+            document.querySelector("#result1").innerHTML = `Out of 600 your total score is ${totalMarks} and percentage is ${percentage}%. <br> Your grade is ${grades}`;
+
+        }
+            
+
+      
+    </script>
+</body>
+</html>

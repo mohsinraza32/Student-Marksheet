@@ -1,0 +1,29 @@
+body{
+    background-color: cornflowerblue;
+}
+.main{
+    text-align: center;
+    font-family: sans-serif;
+}
+div > h1{
+    color: red;
+}
+label{
+    color: white;
+    padding-right: px;
+    width: 100px;
+    display: inline-block;
+}
+input{
+    margin-top: 10px;
+}
+.btn{
+    margin-top: 15px;
+    color: white;
+    background-color: cadetblue;
+    cursor: pointer;
+    padding: 5px 20px;
+}
+.btn:hover{
+    background-color:crimson;
+}
